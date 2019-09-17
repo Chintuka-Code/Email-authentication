@@ -1,0 +1,18 @@
+
+
+<div  class=" container  border border-dark rounded">
+        <img src="assets\icon.png"height="50"  class="mx-auto"width="50" class="m-2"> 
+
+        <form [formGroup]="Evalid" (ngSubmit)="Data()">
+                <div class="form-group">
+                        <label>OTP</label>
+                        <input class="form-control" type="text" formControlName="pin">
+                        <div *ngIf="Evalid.controls.pin.invalid && Evalid.controls.pin.dirty" class="alert alert-danger">
+                                <div *ngIf="Evalid.controls.pin.errors.required">Pin is required</div>
+                            </div>
+                 </div>
+                 <input type="submit" name="submit" class="btn btn-success" [disabled]="Evalid.invalid">
+        </form>
+</div>
+
+
